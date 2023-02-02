@@ -12,8 +12,10 @@ pipeline {
 
     stage('stage') {
       steps {
-        sh 'ng build'
-        nodejs 'jenk_node'
+        nodejs('jenk_node') {
+          sh 'ng build'
+        }
+
       }
     }
 
